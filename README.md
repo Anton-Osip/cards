@@ -1,54 +1,55 @@
-# React + TypeScript + Vite
+# Тестовое задание необходимо выполнить только с указанным стэком и прислать две ссылки. Работа с только ссылкой на гитхаб рассматриваться не будет.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Задача:
 
-Currently, two official plugins are available:
+Создать SPA со списком карточек, на каждой из которых выводится картинка и любая информация на ваш вкус, которая пришла
+с эндпоинта или созданная пользователем.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Дизайн не важен, главное, чтобы было просто и аккуратно. По стэку ориентируемся на список ниже. Остальные решения на
+вас.
 
-## Expanding the ESLint configuration
+## Стэк: Typescript \ React/Next \ Redux || Zustand
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Для задачи можно выбрать любое публичное api, например, отсюда https://github.com/public-apis/public-apis Все полученные
+и созданные данные хранить во внутреннем store
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Можно использовать ui библиотеки, библиотеки для работы с формой.
+Будет оцениваться подход к заданию, качество и структура кода.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Задача 1. Вывести список продуктов
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+#### На странице /products
+- вывести весь список продуктов 
+- на карточке должна быть иконка лайка. При нажатии на которую, ставится или убирается like. Иконка должна подкрашиваться,когда проставлен like.
+- на карточке должна быть иконка удаления. При нажатии на которую, карточка удаляется.
+- добавить фильтр для просмотра всех карточек и карточек, добавленных в избранное
+- контент карточки(текст) должен быть урезан, чтобы у карточек была одинаковая высота
+- при клике на любом месте карточки (кроме иконки лайка и кнопки удаления) мы должно попадать на отдельную страницу карточки.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Задача 2. Страница продукта
+
+На странице /products/:id
+- вывести более подробную информацию о продукте.
+- сделать кнопку для перехода на основную страницу
+### Задача 3. Создание продукта
+На отдельной странице /create- product реализовать 
+- создание продукта
+- создать форму с полями. Поля обязательные и с минимальной валидацией.
+- при отправке формы, сохранить данные в общий store.
+
+### Бонусы
+
+- Реализовать пагинацию списка
+- Реализовать возможность редактирования карточки продукта
+- Реализовать дополнительную фильтрацию
+- Реализовать поиск (без кнопки отправки)
+
+В каком формате сдавать?
+
+Ссылка на GitHub + проект, выложенный на GitHub Pages (ВНИМАНИЕ! Работа будет приниматься только с ссылкой на деплой).
+Сроки - до 7 дней.
+Также необходимо прислать ПОЛНОЦЕННОЕ РЕЗЮМЕ файлом (с указанием где учились и сколько) в
+телеграм - https://t.me/salfa_ru
+
+
+
